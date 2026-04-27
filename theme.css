@@ -1,0 +1,149 @@
+/* ── Fonts ── */
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap');
+
+:root {
+    /* wa! sans */
+    --font-sans: 'Pretendard Variable', Pretendard, system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', 'Consolas', 'D2Coding', monospace;
+
+    --text-headline1: 1.75rem;
+    --text-headline1--line-height: 1.3;
+    --text-headline1--font-weight: 700;
+    --text-headline1--letter-spacing: -0.02em;
+
+    --text-headline2: 1.25rem;
+    --text-headline2--line-height: 1.35;
+    --text-headline2--font-weight: 700;
+    --text-headline2--letter-spacing: -0.01em;
+
+    --text-headline3: 1.1rem;
+    --text-headline3--line-height: 1.4;
+    --text-headline3--font-weight: 600;
+
+    --text-body1: 1rem;
+    --text-body1--line-height: 1.6;
+    --text-body1--font-weight: 400;
+
+    --text-body2: 0.75rem;
+    --text-body2--line-height: 1.55;
+    --text-body2--font-weight: 400;
+
+    --text-label1: 0.9rem;
+    --text-label1--line-height: 1.4;
+    --text-label1--font-weight: 600;
+
+    --text-label2: 0.8rem;
+    --text-label2--line-height: 1.3;
+    --text-label2--font-weight: 600;
+    --text-label2--letter-spacing: 0.01em;
+
+    --text-caption: 0.75rem;
+    --text-caption--line-height: 1.4;
+    --text-caption--font-weight: 400;
+    --text-caption--letter-spacing: 0.01em;
+
+    --text-code: 0.875rem;
+    --text-code--line-height: 1.5;
+    --text-code--font-weight: 400;
+
+    --color-primary-50: #f5f8fa;
+    --color-primary-100: #d7e4eb;
+    --color-primary-200: #b7d2df;
+    --color-primary-300: #91c1d9;
+    --color-primary-400: #66b1d7;
+    --color-primary-500: #3aa3d7;
+    --color-primary-600: #228dc2;
+    --color-primary-700: #1c729c;
+    --color-primary-800: #155677;
+    --color-primary-900: #0e3b51;
+    --color-primary-950: #081f2b;
+
+    --color-secondary-50: #f7f5f9;
+    --color-secondary-100: #e2daea;
+    --color-secondary-200: #ccbbdd;
+    --color-secondary-300: #b698d4;
+    --color-secondary-400: #a172d0;
+    --color-secondary-500: #8b49cd;
+    --color-secondary-600: #752fbc;
+    --color-secondary-700: #602699;
+    --color-secondary-800: #4a1e76;
+    --color-secondary-900: #341554;
+    --color-secondary-950: #1f0c31;
+
+    --color-neutral-50: #f7f7f8;
+    --color-neutral-100: #dfe1e3;
+    --color-neutral-200: #c8cacd;
+    --color-neutral-300: #b0b4b8;
+    --color-neutral-400: #999ea2;
+    --color-neutral-500: #82878c;
+    --color-neutral-600: #6d7175;
+    --color-neutral-700: #575a5d;
+    --color-neutral-800: #424446;
+    --color-neutral-900: #2c2d2e;
+    --color-neutral-950: #161717;
+
+    --color-success-bg: var(--semantic-success-bg);
+    --color-success-fg: var(--semantic-success-fg);
+    --color-success-text: var(--semantic-success-text);
+
+    --color-warning-bg: var(--semantic-warning-bg);
+    --color-warning-fg: var(--semantic-warning-fg);
+    --color-warning-text: var(--semantic-warning-text);
+
+    --color-danger-bg: var(--semantic-danger-bg);
+    --color-danger-fg: var(--semantic-danger-fg);
+    --color-danger-text: var(--semantic-danger-text);
+
+    --color-info-bg: var(--semantic-info-bg);
+    --color-info-fg: var(--semantic-info-fg);
+    --color-info-text: var(--semantic-info-text);
+
+    font-family: var(--font-sans);
+}
+
+:root {
+    --semantic-success-bg: #f0fdf4;
+    --semantic-success-fg: #22c55e;
+    --semantic-success-text: #15803d;
+
+    --semantic-warning-bg: #fefce8;
+    --semantic-warning-fg: #eab308;
+    --semantic-warning-text: #a16207;
+
+    --semantic-danger-bg: #fef2f2;
+    --semantic-danger-fg: #ef4444;
+    --semantic-danger-text: #b91c1c;
+
+    --semantic-info-bg: #eff6ff;
+    --semantic-info-fg: #3b82f6;
+    --semantic-info-text: #1d4ed8;
+
+    body {
+        color: var(--color-neutral-900);
+        background-color: var(--color-neutral-50);
+    }
+}
+
+.dark {
+    --semantic-success-bg: #052e16;
+    --semantic-success-fg: #4ade80;
+    --semantic-success-text: #86efac;
+
+    --semantic-warning-bg: #422006;
+    --semantic-warning-fg: #facc15;
+    --semantic-warning-text: #fde047;
+
+    --semantic-danger-bg: #450a0a;
+    --semantic-danger-fg: #f87171;
+    --semantic-danger-text: #fca5a5;
+
+    --semantic-info-bg: #172554;
+    --semantic-info-fg: #60a5fa;
+    --semantic-info-text: #93c5fd;
+
+    &body, body {
+        color: var(--color-neutral-50);
+        background-color: var(--color-neutral-900);
+    }
+}

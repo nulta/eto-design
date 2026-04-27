@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="intro.css">
+</head>
+<body>
+    <script>
+        // Dim the backdrop on scroll
+        // NOTE: animation-timeline을 쓰면 pure-CSS로 구현할 수 있지만, 그건 아직 Firefox에서 먹질 않습니다.
+        window.addEventListener('scroll', () => {
+            const backdrop = document.querySelector('.backdrop');
+            const scrollY = window.scrollY;
+            const minScroll = backdrop.clientHeight / 4;
+            const maxScroll = backdrop.clientHeight * 4;
+            const minOpacity = 0.8;
+            const opacity = 
+                1.0 - Math.min(Math.max((scrollY - minScroll) / (maxScroll - minScroll), 0), 1.0-minOpacity);
+
+            backdrop.style.opacity = opacity;
+        });
+    </script>
+    <div class="backdrop">
+        <div class="star star1"></div>
+        <div class="star star2"></div>
+        <div class="star star3"></div>
+    </div>
+    <main>
+        <section class="section-full section-hero">
+            <img src="assets/placeholder-logo.png" alt="Logo" class="logo-img">
+            <p class="server-description">
+                <span class="text-weak">welcome to</span>
+                eto.example.org
+            </p>
+            <div class="styled-hr">
+                <hr/>
+            </div>
+            <div class="auth-buttons">
+                <button class="signup">계정 만들기</button>
+                <button class="login">로그인</button>
+            </div>
+        </section>
+        <section class="section-fit section-info">
+            <div class="info-box problem-list-box">
+                <header>
+                    <label>
+                        <h2>최근 인기 문제</h2>
+                        <!-- DEVELOPER: 아래의 체크박스는 "전체 인기 문제" / "최근 인기 문제"를 스위칭합니다 -->
+                        <!-- 체크될 때 위의 <h2> 텍스트도 바꿔주세요 -->
+                        <input type="checkbox" id="toggle-problem-list" class="toggle-switch">
+                    </label>
+                </header>
+                <section>
+                    <article>
+                        <h3>A ^ B</h3>
+                        <p>1::problems.example</p>
+                    </article>
+                    <article>
+                        <h3>Lorem ipsum</h3>
+                        <p>2::problems.example</p>
+                    </article>
+                    <article>
+                        <h3>dolor sit amet consectetur</h3>
+                        <p>3::problems.example</p>
+                    </article>
+                    <article>
+                        <h3>adipisicing elit. Veritatis, neque</h3>
+                        <p>4::problems.example</p>
+                    </article>
+                    <article>
+                        <h3>Veniam saepe nulla</h3>
+                        <p>5::problems.example</p>
+                    </article>
+                    <article>
+                        <h3>ullam id ea assumenda</h3>
+                        <p>1::problems.example</p>
+                    </article>
+                    <article>
+                        <h3>accusamus dignissimos reprehenderit</h3>
+                        <p>2::problems.example</p>
+                    </article>
+                    <article>
+                        <h3>Ad consequatur dolore</h3>
+                        <p>3::problems.example</p>
+                    </article>
+                    <article>
+                        <h3>repellat voluptatibus</h3>
+                        <p>4::problems.example</p>
+                    </article>
+                    <article>
+                        <h3>Rerum</h3>
+                        <p>5::problems.example</p>
+                    </article>
+                </section>
+            </div>
+            <div class="server-list">
+                <article class="info-box">
+                    <h2>멋진 문제서버</h2>
+                    <p>deps.coolserver.example.org</p>
+                </article>
+                <article class="info-box">
+                    <h2>아주 대단한 문제서버</h2>
+                    <p>problems.example</p>
+                </article>
+                <article class="info-box">
+                    <h2>다른 서버</h2>
+                    <p>luna.server.place</p>
+                </article>
+                <article class="info-box">
+                    <h2>미묘한 편인 서버</h2>
+                    <p>mimyo.space</p>
+                </article>
+                <article class="info-box">
+                    <h2>멋진 문제서버</h2>
+                    <p>deps.coolserver.example.org</p>
+                </article>
+                <article class="info-box">
+                    <h2>아주 대단한 문제서버</h2>
+                    <p>problems.example</p>
+                </article>
+                <article class="info-box">
+                    <h2>미묘한 편인 서버</h2>
+                    <p>mimyo.space</p>
+                </article>
+                <article class="info-box">
+                    <h2>다른 서버</h2>
+                    <p>luna.server.place</p>
+                </article>
+                <article class="info-box">
+                    <h2>멋진 문제서버</h2>
+                    <p>deps.coolserver.example.org</p>
+                </article>
+                <article class="info-box">
+                    <h2>아주 대단한 문제서버</h2>
+                    <p>problems.example</p>
+                </article>
+                <article class="info-box">
+                    <h2>다른 서버</h2>
+                    <p>luna.server.place</p>
+                </article>
+            </div>
+        </section>
+        <footer>
+            powered by <a href="https://github.com/deps-makers/deps-eto" target="_blank" rel="noopener">Eto</a>
+        </footer>
+    </main>
+</body>
+</html>
