@@ -124,35 +124,6 @@ main {
             @media screen and (max-width: 400px) {
                 flex-direction: column;
             }
-    
-            button {
-                font-size: var(--text-headline3);
-                border-radius: 999px;
-    
-                padding-inline: 1.25em;
-            }
-    
-            button.login {
-                background: none;
-                border: 1px solid var(--color-neutral-100);
-                color: var(--color-neutral-100);
-    
-                &:hover {
-                    background-color: var(--color-neutral-100);
-                    color: var(--color-neutral-900);
-                }
-    
-                &:focus-visible {
-                    outline: 2px solid var(--color-neutral-100);
-                    outline-offset: 2px;
-                }
-    
-                &:active {
-                    color: var(--color-neutral-900);
-                    background-color: var(--color-neutral-300);
-                    outline-offset: 1px;
-                }
-            }
         }
     }
 
@@ -284,6 +255,42 @@ img.logo-img {
         scrollbar-width: thin;
         scrollbar-gutter: stable;
         padding-inline: 1em;
+    }
+}
+
+/* login */
+
+form.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+
+    button {
+        align-self: center;
+        padding-inline: 2em;
+    }
+}
+
+form.register-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75em;
+
+    .button-group {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        &::after {
+            content: "";
+            display: inline-block;
+            width: 2.25em;
+        }
+
+        width: 100%;
+        gap: 1em;
+        align-self: center;
+        margin-block-start: 1.5em;
     }
 }
 

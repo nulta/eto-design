@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="intro.css">
+</head>
+<body>
+    <script>
+        // Dim the backdrop on scroll
+        // NOTE: animation-timeline을 쓰면 pure-CSS로 구현할 수 있지만, 그건 아직 Firefox에서 먹질 않습니다.
+        window.addEventListener('scroll', () => {
+            const backdrop = document.querySelector('.backdrop');
+            const scrollY = window.scrollY;
+            const minScroll = backdrop.clientHeight / 4;
+            const maxScroll = backdrop.clientHeight * 4;
+            const minOpacity = 0.8;
+            const opacity = 
+                1.0 - Math.min(Math.max((scrollY - minScroll) / (maxScroll - minScroll), 0), 1.0-minOpacity);
+
+            backdrop.style.opacity = opacity;
+        });
+    </script>
+    <div class="backdrop">
+        <div class="star star1"></div>
+        <div class="star star2"></div>
+        <div class="star star3"></div>
+    </div>
+    <main>
+        <section class="section-full section-hero">
+            <img src="assets/placeholder-logo.png" alt="Logo" class="logo-img">
+            <p class="server-description">
+                <span class="text-weak">welcome to</span>
+                eto.example.org
+            </p>
+            <div class="styled-hr">
+                <hr/>
+            </div>
+
+            <form class="register-form">
+                <fieldset class="row">
+                    <label>
+                        @
+                        <input type="text" name="username" placeholder="핸들네임" required autofocus>
+                        ::eto.example.org
+                    </label>
+                </fieldset>
+                <input type="password" name="password" placeholder="비밀번호" required>
+                <fieldset>
+                    <input type="password" name="password" placeholder="비밀번호 확인" required>
+                    <small>
+                        비밀번호는 8자 이상 128자 미만이어야 합니다.
+                    </small>
+                </fieldset>
+                <div class="button-group">
+                    <button type="button" class="outlined iconed" onclick="location.href='intro.html'">←</button>
+                    <button type="submit">계정 만들기</button>
+                </div>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

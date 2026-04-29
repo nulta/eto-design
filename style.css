@@ -28,12 +28,14 @@ a:any-link {
 button {
     padding: 0.5em 1em;
     border: none;
-    border-radius: 4px;
+    border-radius: 999px;
     background-color: var(--color-primary-500);
     color: var(--color-neutral-50);
     font-size: var(--text-body1);
     cursor: pointer;
-    transition: background-color 0.3s, outline 0.2s;
+    transition: background-color 0.3s, outline 0.1s;
+
+    outline-color: transparent;
 
     &:hover {
         background-color: var(--color-primary-700);
@@ -48,6 +50,55 @@ button {
         color: var(--color-neutral-100);
         background-color: var(--color-primary-800);
         outline-offset: 1px;
+    }
+
+    &.outlined {
+        background: none;
+        border: 1px solid var(--color-neutral-100);
+        color: var(--color-neutral-100);
+
+        &:hover {
+            background-color: var(--color-neutral-100);
+            color: var(--color-neutral-900);
+        }
+
+        &:focus-visible {
+            outline: 2px solid var(--color-neutral-100);
+            outline-offset: 2px;
+        }
+
+        &:active {
+            color: var(--color-neutral-900);
+            background-color: var(--color-neutral-300);
+            outline-offset: 1px;
+        }
+    }
+
+    &.iconed {
+        /* aspect-ratio: 1 / 1; */
+        width: 2.25em;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        padding: 0;
+    }
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+    padding: 0.5em;
+    background-color: var(--color-neutral-900);
+    border: 1px solid var(--color-neutral-700);
+    color: var(--color-neutral-50);
+    font-size: var(--text-body1);
+    border-radius: 4px;
+    transition: border-color 0.2s, background-color 0.1s;
+
+    &:focus {
+        background-color: var(--color-neutral-800);
+        border-color: var(--color-primary-500);
+        outline: none;
     }
 }
 
@@ -80,4 +131,57 @@ input[type="checkbox"].toggle-switch {
             transform: translateX(16px);
         }
     }
+}
+
+fieldset {
+    border: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+
+    &.row {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        background-color: var(--color-neutral-900);
+        border: 1px solid var(--color-neutral-700);
+        color: var(--color-neutral-50);
+        font-size: var(--text-body1);
+        border-radius: 4px;
+        transition: border-color 0.2s, background-color 0.1s;
+
+        &:focus-within {
+            background-color: var(--color-neutral-800);
+            border-color: var(--color-primary-500);
+            outline: none;
+        }
+
+        label {
+            font-size: var(--text-body1);
+            color: var(--color-neutral-200);
+            user-select: none;
+        }
+
+        input {
+            flex: 1;
+            padding: 0;
+            border: none;
+            background: none;
+            padding-block: 0.5em;
+        }
+
+        :first-child {
+            padding-inline-start: 0.5em;
+        }
+
+        * {
+            padding-inline-end: 0.5em;
+        }
+    }
+}
+
+small {
+    font-size: var(--text-caption);
+    opacity: 0.75;
 }
