@@ -40,26 +40,78 @@
             </div>
 
             <form class="register-form">
-                <fieldset class="row">
-                    <label>
+                <label class="col">
+                    <small>
+                        핸들네임
+                    </small>
+                    <label class="row">
                         @
                         <input type="text" name="username" placeholder="핸들네임" required autofocus>
-                        ::eto.example.org
+                        <span>
+                            ::eto.example.org
+                        </span>
                     </label>
-                </fieldset>
-                <input type="password" name="password" placeholder="비밀번호" required>
-                <fieldset>
+                </label>
+                <label class="col">
+                    <small>
+                        비밀번호
+                    </small>
+                    <input type="password" name="password" placeholder="비밀번호" required>
                     <input type="password" name="password" placeholder="비밀번호 확인" required>
                     <small>
-                        비밀번호는 8자 이상 128자 미만이어야 합니다.
+                        8자 이상 128자 미만이어야 합니다.
                     </small>
+                </label>
+
+                <fieldset class="row">
+                    <button type="button" class="outlined" onclick="document.querySelector('#load-identity-dialog').showModal()">
+                        기존 아이덴티티 불러오기
+                    </button>    
+                    <button type="button">
+                        새 아이덴티티 생성
+                    </button>
                 </fieldset>
+
                 <div class="button-group">
                     <button type="button" class="outlined iconed" onclick="location.href='intro.html'">←</button>
-                    <button type="submit">계정 만들기</button>
+                    <div></div>
+                    <button type="button" class="iconed" onclick="location.href='intro.html'" disabled>→</button>
                 </div>
             </form>
         </section>
+        <dialog id="load-identity-dialog" onclick="event.target.close && event.target.close()">
+            <!-- DEVELOPER: 여기에 붙은 onclick은 다이얼로그 바깥을 클릭했을 때 닫는 역할만 수행함 -->
+            <section>
+                <header>
+                    <h2>
+                        기존 아이덴티티 불러오기
+                    </h2>
+                </header>
+                <form class="identity-dialog-form">
+                    <label class="col">
+                        <small>
+                            아이덴티티 JSON
+                        </small>
+                        <textarea name="identity-json" placeholder="{...}" required class="mono" rows="6"></textarea>
+                    </label>
+                    <label class="col">
+                        <small>
+                            비밀키
+                        </small>
+                        <input type="password" name="password" placeholder="아이덴티티 비밀키" required class="mono">
+                    </label>
+
+                    <div>
+                        <button class="outlined" onclick="event.target.closest('dialog').close()">
+                            취소
+                        </button>
+                        <button>
+                            불러오기
+                        </button>
+                    </div>
+                </form>
+            </section>
+        </dialog>
     </main>
 </body>
 </html>

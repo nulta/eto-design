@@ -264,34 +264,24 @@ form.login-form {
     display: flex;
     flex-direction: column;
     gap: 1em;
-
-    button {
-        align-self: center;
-        padding-inline: 2em;
-    }
+    max-width: 25em;
+    width: 100%;
 }
 
 form.register-form {
     display: flex;
     flex-direction: column;
-    gap: 0.75em;
+    gap: 1em;
+    max-width: 25em;
+    width: 100%;
+}
 
-    .button-group {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-
-        &::after {
-            content: "";
-            display: inline-block;
-            width: 2.25em;
-        }
-
-        width: 100%;
-        gap: 1em;
-        align-self: center;
-        margin-block-start: 1.5em;
-    }
+form.identity-dialog-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    max-width: 28em;
+    width: 100vw;
 }
 
 /* animations */
