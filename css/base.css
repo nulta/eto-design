@@ -1,0 +1,6 @@
+pre {
+    background-color: var(--color-bg-2);
+    border-radius: var(--border-radius-xsml);
+    padding: 0.75ch 1ch;
+    overflow-x: auto;
+}

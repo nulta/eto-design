@@ -1,0 +1,139 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap');
+
+/* Fonts, Text, Sizes */
+:root {
+    --font-sans: 'Pretendard Variable', Pretendard, system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', 'Consolas', 'D2Coding', monospace;
+    --font-main: var(--font-sans);
+
+    --text-title: 2.25rem;
+    --text-title--font-weight: 800;
+    --text-title--letter-spacing: -0.02em;
+    --text-headline1: 1.75rem;
+    --text-headline1--font-weight: 700;
+    --text-headline1--letter-spacing: -0.02em;
+    --text-headline2: 1.25rem;
+    --text-headline2--font-weight: 700;
+    --text-headline2--letter-spacing: -0.01em;
+    --text-headline3: 1.1rem;
+    --text-headline3--font-weight: 600;
+    --text-body1: 1rem;
+    --text-body2: 0.875rem;
+
+    --text-label1: 0.9rem;
+    --text-label1--font-weight: 600;
+    --text-label2: 0.8rem;
+    --text-label2--font-weight: 600;
+    --text-label2--letter-spacing: 0.01em;
+    --text-caption: 0.75rem;
+    --text-caption--letter-spacing: 0.01em;
+    --text-code: 0.875rem;
+
+    --border-radius-big: 24px;
+    --border-radius-med: 18px;
+    --border-radius-sml: 12px;
+    --border-radius-xsml: 5px;
+
+    --layout-main-width: 900px;
+    --layout-main-block-padding: 4rem;
+    --layout-global-aside-width: 3.5rem;
+}
+
+/* Primitive Colors */
+:root {
+    /* never use these directly!! */
+    --color-primary-50: #f5f8fa;
+    --color-primary-100: #d7e4eb;
+    --color-primary-200: #b7d2df;
+    --color-primary-300: #91c1d9;
+    --color-primary-400: #66b1d7;
+    --color-primary-500: #3aa3d7;
+    --color-primary-600: #228dc2;
+    --color-primary-700: #1c729c;
+    --color-primary-800: #155677;
+    --color-primary-900: #0e3b51;
+    --color-primary-950: #081f2b;
+    --color-secondary-50: #f7f5f9;
+    --color-secondary-100: #e2daea;
+    --color-secondary-200: #ccbbdd;
+    --color-secondary-300: #b698d4;
+    --color-secondary-400: #a172d0;
+    --color-secondary-500: #8b49cd;
+    --color-secondary-600: #752fbc;
+    --color-secondary-700: #602699;
+    --color-secondary-800: #4a1e76;
+    --color-secondary-900: #341554;
+    --color-secondary-950: #1f0c31;
+    --color-danger-50: #fff0f6;
+    --color-danger-100: #ffdfeb;
+    --color-danger-200: #ffcce0;
+    --color-danger-300: #ffb7d3;
+    --color-danger-400: #ff6da6;
+    --color-danger-500: #f60e68;
+    --color-danger-600: #c00b51;
+    --color-danger-700: #8b083b;
+    --color-danger-800: #520523;
+    --color-danger-900: #390318;
+    --color-danger-950: #260210;
+    --color-neutral-50: #f7f7f8;
+    --color-neutral-100: #dfe1e3;
+    --color-neutral-200: #c8cacd;
+    --color-neutral-300: #b0b4b8;
+    --color-neutral-400: #999ea2;
+    --color-neutral-500: #82878c;
+    --color-neutral-600: #6d7175;
+    --color-neutral-700: #575a5d;
+    --color-neutral-800: #424446;
+    --color-neutral-900: #2c2d2e;
+    --color-neutral-950: #181a1b;
+}
+
+/* Dark & Light Theme Support */
+:root {
+    color-scheme: light dark;
+
+    /* Use: <html data-theme=("light" | "dark")> */
+    &[data-theme="light"] {
+        color-scheme: light;
+    }
+    &[data-theme="dark"] {
+        color-scheme: dark;
+    }
+}
+
+/* Semantic Colors */
+:root {
+    /* regarding light-dark(), see: https://web.dev/articles/light-dark?hl=ko */
+
+    --color-bg-0: light-dark(var(--color-primary-50), var(--color-primary-950));
+    --color-bg-1: light-dark(var(--color-neutral-50), var(--color-neutral-950));
+    --color-bg-2: light-dark(var(--color-neutral-100), var(--color-neutral-900));
+
+    --color-bg-0-border: light-dark(var(--color-primary-300), var(--color-primary-700));
+    --color-bg-1-border: light-dark(var(--color-neutral-200), var(--color-neutral-700));
+    --color-bg-2-border: light-dark(var(--color-neutral-100), var(--color-neutral-800));
+
+    --color-fg-0: light-dark(var(--color-neutral-900), var(--color-neutral-100));
+    --color-fg-1: light-dark(var(--color-neutral-700), var(--color-neutral-300));
+    --color-fg-2: light-dark(var(--color-neutral-500), var(--color-neutral-500));
+
+    /* [base], hover, active, disabled, contrast */
+    --color-primary: light-dark(var(--color-primary-500), var(--color-primary-500));
+    --color-primary-hover: light-dark(var(--color-primary-600), var(--color-primary-600));
+    --color-primary-active: light-dark(var(--color-primary-700), var(--color-primary-700));
+    --color-primary-disabled: light-dark(var(--color-primary-300), var(--color-primary-700));
+    --color-primary-contrast: light-dark(var(--color-neutral-100), var(--color-neutral-900));
+
+    --color-secondary: light-dark(var(--color-secondary-500), var(--color-secondary-500));
+    --color-secondary-hover: light-dark(var(--color-secondary-600), var(--color-secondary-600));
+    --color-secondary-active: light-dark(var(--color-secondary-700), var(--color-secondary-700));
+    --color-secondary-disabled: light-dark(var(--color-secondary-300), var(--color-secondary-700));
+    --color-secondary-contrast: light-dark(var(--color-neutral-100), var(--color-neutral-900));
+}
+
+/* Application */
+body {
+    font-family: var(--font-main);
+    background-color: var(--color-bg-0);
+}

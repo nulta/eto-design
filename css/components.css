@@ -1,0 +1,110 @@
+/* 
+ * Class naming scheme borrowed from rscss (https://rstacruz.github.io/rscss/index.html)
+ *   - hypen-case for components
+ *   - singleword for component elements
+ *   - -appended-hypen for variant classes
+ */
+
+@scope (.global-navbar) {
+    background-color: var(--color-bg-1);
+    border-inline-end: 1px solid var(--color-bg-1-border);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: var(--layout-global-aside-width);
+}
+
+@scope (.local-navbar) {
+    background-color: var(--color-bg-1);
+    border: 1px solid var(--color-bg-1-border);
+    border-radius: var(--border-radius-sml);
+
+    position: sticky;
+    top: var(--layout-main-block-padding);
+    max-height: calc(100vh - var(--layout-main-block-padding) * 2);
+}
+
+@scope (.problem-header) {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    > h1 {
+        font-size: var(--text-title);
+        font-weight: var(--text-title--font-weight);
+        letter-spacing: var(--text-title--letter-spacing);
+    }
+
+    > .problemid {
+        font-family: var(--font-mono);
+        color: var(--color-fg-2);
+    }
+}
+
+@scope (.text-contents) {
+    h1, h2 {
+        border-block-end: 1px solid var(--color-bg-2-border);
+        padding-block-end: 0.4rem;
+    }
+
+    h1 {
+        font-size: var(--text-title);
+        font-weight: var(--text-title--font-weight);
+        letter-spacing: var(--text-title--letter-spacing);
+    }
+
+    h2 {
+        font-size: var(--text-headline1);
+        font-weight: var(--text-headline1--font-weight);
+        letter-spacing: var(--text-headline1--letter-spacing);
+    }
+
+    h3 {
+        font-size: var(--text-headline2);
+        font-weight: var(--text-headline2--font-weight);
+        letter-spacing: var(--text-headline2--letter-spacing);
+    }
+
+    h4 {
+        font-size: var(--text-headline3);
+        font-weight: var(--text-headline3--font-weight);
+    }
+
+    figure {
+        text-align: center;
+        > img {
+            display: inline-block;
+        }
+        > figcaption {
+            font-size: var(--text-body2);
+            color: var(--color-fg-1);
+        }
+    }
+
+    *+* {
+        margin-block-start: 1em;
+    }
+}
+
+@scope (.two-columns) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(calc(var(--layout-main-width) * 0.3), 1fr));
+    gap: 1rem;
+
+    > * {
+        flex: 1;
+        margin-block-start: 0;
+
+        > :first-child {
+            margin-block-start: 0;
+        }
+    }
+}

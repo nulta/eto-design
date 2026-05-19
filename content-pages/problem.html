@@ -4,30 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="color-scheme" content="light dark" />
-    <title>Document</title>
+    <title>문제</title>
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="content-style.css">
     <script type="module" src="../js/background-component.js"></script>
 </head>
 <body>
     <background-component></background-component>
-
+    
     <aside class="global-navbar">
         <p>globals1</p>
         <p>globals2</p>
     </aside>
+    
     <aside class="local-navbar">
         <p>locals1</p>
         <p>locals2</p>
     </aside>
+    
     <main>
-        <header>
-            <h1>홈</h1>
+        <header class="problem-header">
+            <h1>좀 긴 제목을 가지고 어떻게 예제를 만들수 있을까 고민해보았지만 딱히 답이 나오지 않아 오오-</h1>
+            <p class="problemid">1024::problem.server</p>
         </header>
-        <section>
-            <p>hello</p>
+        <section class="text-contents">
+            <h2>문제</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem deserunt minus ex officiis adipisci ipsam libero eveniet voluptatem, quia atque, eligendi sunt aut, et corporis exercitationem repellat perspiciatis doloremque odit.</p>
-            <p>Mollitia ratione impedit quaerat, fuga ducimus nesciunt repudiandae nobis, sunt non eveniet tempora voluptatibus vel aliquid blanditiis natus accusantium sint nulla ad facilis repellat. Nulla adipisci veniam possimus repudiandae. Recusandae.</p>
+            <figure>
+                <img src="../assets/placeholder-logo.png" alt="Example Image">
+                <figcaption>Figure 1: Example Image</figcaption>
+            </figure>
             <p>Perferendis distinctio modi corporis aut quibusdam eos corrupti vel quidem porro dolor iusto animi repellat totam, accusamus impedit maxime fuga. Quam earum aliquid itaque deserunt vero consequatur illo at quis.</p>
             <details>
                 <summary>Details</summary>
@@ -56,6 +62,46 @@
                 <p>Perferendis distinctio modi corporis aut quibusdam eos corrupti vel quidem porro dolor iusto animi repellat totam, accusamus impedit maxime fuga. Quam earum aliquid itaque deserunt vero consequatur illo at quis.</p>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem deserunt minus ex officiis adipisci ipsam libero eveniet voluptatem, quia atque, eligendi sunt aut, et corporis exercitationem repellat perspiciatis doloremque odit.</p>
             </details>
+            
+            <h2>입력</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque obcaecati ipsum sequi alias repellendus vitae placeat cum veritatis. Sapiente voluptate dignissimos obcaecati dolores consequatur fuga tenetur, architecto eveniet et suscipit.</p>
+
+            <h2>출력</h2>
+            <p>Lorem ipsum dolor sit amet</p>
+            
+            <h2>예제</h2>
+            <div class="two-columns">
+                <section>
+                    <h3>입력 1</h3>
+                    <pre>
+5
+1 10 2
+2 10 7
+3 0 9
+4 5 3
+5 8 1</pre>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. At adipisci facere commodi provident quod!</p>
+                </section>
+                <section>
+                    <h3>출력 1</h3>
+                    <pre>
+11107456</pre>
+                </section>
+
+                <section>
+                    <h3>입력 2</h3>
+                    <pre>
+3
+17 999999999 111984 5353423 1111324 22302424
+2 10 6
+1 21 55</pre>
+                </section>
+                <section>
+                    <h3>출력 2</h3>
+                    <pre>11107456</pre>
+                </section>
+            </div>
+            
         </section>
     </main>
 </body>

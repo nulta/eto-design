@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    /* see: https://kittygiraudel.com/2020/05/18/using-calc-to-figure-out-optimal-line-height/ */
+    line-height: calc(1em + 0.5rem);
+
+    text-wrap: balance;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+}
+
+button, input, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+pre, code {
+    font-family: var(--font-mono);
+    font-size: inherit;
+}
+
+img, picture, video, canvas, svg {
+    /* stop images from overflowing their containers */
+    display: block;
+    max-width: 100%;
+}
+
+:has(:target) {
+    scroll-padding-top: 4rem;
+}
