@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="content-style.css">
+</head>
+<body>
+    <div class="backdrop">
+        <canvas></canvas>
+    </div>
+
+    <header>
+        <h1>홈</h1>
+    </header>
+
+    <main>
+
+    </main>
+
+    <script>
+        // DEVELOPER: 로그인 레이아웃에서 그렸던거 그대로 넣어주세요
+        ;(() => {
+            const canvas = document.querySelector('.backdrop canvas');
+            const ctx = canvas.getContext('2d');
+
+            function draw() {
+                // 적당한 플레이스홀더
+                const dpr = window.devicePixelRatio || 1;
+                canvas.style.width = window.innerWidth + 'px';
+                canvas.style.height = window.innerHeight + 'px';
+                canvas.width = window.innerWidth * dpr;
+                canvas.height = window.innerHeight * dpr;
+                ctx.scale(dpr, dpr);
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                const t = Date.now() / 1000;
+                const sizes = [75, 125];
+                const speeds = [0.5, 0.21, 0.44, 0.17, 0.38];
+                const colors = ["#194d6755", "#29526722", "#3b4b5555", "#1c2c3455"];
+                const chars = ["◇", "◆"];
+                const numObjects = 24;
+
+                for (let i = 0; i < numObjects; i++) {
+                    const size = sizes[i % sizes.length];
+                    const speed = speeds[i*3 % speeds.length];
+                    const color = colors[i*7 % colors.length];
+                    const char = chars[i*11 % chars.length];
+
+                    const x = (i * 123456) % (window.innerHeight + size) - size;
+                    const y = (t * speed * 100 + i * 100) % (window.innerWidth + size) - size;
+
+                    ctx.font = `${size}px sans-serif`;
+                    ctx.fillStyle = color;
+                    ctx.fillText(char, x, y);
+                }
+
+                requestAnimationFrame(draw);
+            }
+            draw();
+        })();
+    </script>
+</body>
+</html>
