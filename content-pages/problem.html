@@ -8,24 +8,52 @@
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="content-style.css">
     <script type="module" src="../js/background-component.js"></script>
+
+    <!-- external: tabler icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
 </head>
 <body>
     <background-component></background-component>
-    
+
     <aside class="global-navbar">
-        <p>globals1</p>
-        <p>globals2</p>
+        <button class="-icon -tooltip-right" data-tooltip="홈">
+            <img src="../assets/square-logo.png">
+        </button>
+        <hr>
+        <button class="-icon -tooltip-right" data-tooltip="문제 목록">
+            <i class="ti ti-books"></i>
+        </button>
+        <button class="-icon -tooltip-right" data-tooltip="유저 목록">
+            <i class="ti ti-users"></i>
+        </button>
+        <button class="-icon -tooltip-right" data-tooltip="서버 목록">
+            <i class="ti ti-world"></i>
+        </button>
+        <button class="last avatar-picture">
+            <img src="../assets/profile-placeholder.png" class="profile">
+        </button>
     </aside>
-    
+
     <aside class="local-navbar">
-        <p>locals1</p>
-        <p>locals2</p>
+        <button class="-primary -icon -tooltip-left" data-tooltip="제출" onclick="document.location = 'submit.html'">
+            <i class="ti ti-send"></i>
+        </button>
+        <button class="-icon -tooltip-left" data-tooltip="제출 기록">
+            <i class="ti ti-files"></i>
+        </button>
+        <button class="-icon -tooltip-left" data-tooltip="공유">
+            <i class="ti ti-share"></i>
+        </button>
     </aside>
-    
+
     <main>
         <header class="problem-header">
             <h1>좀 긴 제목을 가지고 어떻게 예제를 만들수 있을까 고민해보았지만 딱히 답이 나오지 않아 오오-</h1>
             <p class="problemid">1024::problem.server</p>
+            <select class="right -primary -mono">
+                <option value="ko">KO</option>
+                <option value="en">EN</option>
+            </select>
         </header>
         <section class="text-contents">
             <h2>문제</h2>
@@ -62,13 +90,13 @@
                 <p>Perferendis distinctio modi corporis aut quibusdam eos corrupti vel quidem porro dolor iusto animi repellat totam, accusamus impedit maxime fuga. Quam earum aliquid itaque deserunt vero consequatur illo at quis.</p>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem deserunt minus ex officiis adipisci ipsam libero eveniet voluptatem, quia atque, eligendi sunt aut, et corporis exercitationem repellat perspiciatis doloremque odit.</p>
             </details>
-            
+
             <h2>입력</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque obcaecati ipsum sequi alias repellendus vitae placeat cum veritatis. Sapiente voluptate dignissimos obcaecati dolores consequatur fuga tenetur, architecto eveniet et suscipit.</p>
 
             <h2>출력</h2>
             <p>Lorem ipsum dolor sit amet</p>
-            
+
             <h2>예제</h2>
             <div class="two-columns">
                 <section>
@@ -101,7 +129,7 @@
                     <pre>11107456</pre>
                 </section>
             </div>
-            
+
         </section>
     </main>
 </body>

@@ -8,18 +8,44 @@
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="content-style.css">
     <script type="module" src="../js/background-component.js"></script>
+
+    <!-- external: tabler icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
 </head>
 <body>
     <background-component></background-component>
 
     <aside class="global-navbar">
-        <p>globals1</p>
-        <p>globals2</p>
+        <button class="-icon -tooltip-right" data-tooltip="홈">
+            <img src="../assets/square-logo.png">
+        </button>
+        <hr>
+        <button class="-icon -tooltip-right" data-tooltip="문제 목록">
+            <i class="ti ti-books"></i>
+        </button>
+        <button class="-icon -tooltip-right" data-tooltip="유저 목록">
+            <i class="ti ti-users"></i>
+        </button>
+        <button class="-icon -tooltip-right" data-tooltip="서버 목록">
+            <i class="ti ti-world"></i>
+        </button>
+        <button class="last avatar-picture">
+            <img src="../assets/profile-placeholder.png" class="profile">
+        </button>
     </aside>
+
     <aside class="local-navbar">
-        <p>locals1</p>
-        <p>locals2</p>
+        <button class="-primary -icon -tooltip-left" data-tooltip="제출">
+            <i class="ti ti-send"></i>
+        </button>
+        <button class="-icon -tooltip-left" data-tooltip="제출 기록">
+            <i class="ti ti-files"></i>
+        </button>
+        <button class="-icon -tooltip-left" data-tooltip="공유">
+            <i class="ti ti-share"></i>
+        </button>
     </aside>
+
     <main>
         <header>
             <h1>홈</h1>
