@@ -152,7 +152,7 @@
         }
     }
 
-    *+*:not(li) {
+    *+*:not(li,span,section,figcaption) {
         margin-block-start: 1em;
     }
 }
@@ -160,7 +160,7 @@
 @scope (.two-columns) {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(calc(var(--layout-main-width) * 0.3), 1fr));
-    gap: 1rem;
+    gap: 2rem 1rem;
 
     > * {
         flex: 1;
