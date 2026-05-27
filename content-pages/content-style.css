@@ -13,6 +13,7 @@ main {
     flex-direction: column;
     gap: 0.75rem;
     max-width: var(--layout-main-width);
+    width: 100%;
 
     > header, > section {
         background-color: var(--color-bg-1);

@@ -46,6 +46,7 @@
 :root {
     /* never use these directly!! */
     --color-primary-50: #f5f8fa;
+    --color-primary-75: #e4edf3;
     --color-primary-100: #d7e4eb;
     --color-primary-200: #b7d2df;
     --color-primary-300: #91c1d9;
@@ -57,6 +58,7 @@
     --color-primary-900: #0e3b51;
     --color-primary-925: #0a2636;
     --color-primary-950: #081f2b;
+    --color-primary-975: #071b24;
     --color-secondary-50: #f7f5f9;
     --color-secondary-100: #e2daea;
     --color-secondary-200: #ccbbdd;
@@ -81,6 +83,7 @@
     --color-danger-900: #390318;
     --color-danger-950: #260210;
     --color-neutral-50: #f7f7f8;
+    --color-neutral-75: #eaeaec;
     --color-neutral-100: #dfe1e3;
     --color-neutral-200: #c8cacd;
     --color-neutral-300: #b0b4b8;
@@ -110,37 +113,38 @@
 :root {
     /* regarding light-dark(), see: https://web.dev/articles/light-dark?hl=ko */
 
-    --color-bg-0: light-dark(var(--color-primary-50), var(--color-primary-950));
-    --color-bg-1: light-dark(var(--color-neutral-50), var(--color-neutral-950));
-    --color-bg-2: light-dark(var(--color-neutral-100), var(--color-neutral-900));
-    --color-bg-2-active: light-dark(var(--color-neutral-200), var(--color-neutral-800));
+    --color-bg-0: light-dark(var(--color-primary-75), var(--color-primary-975));
+    --color-bg-1: light-dark(var(--color-primary-50), var(--color-primary-925));
+    --color-bg-2: light-dark(var(--color-neutral-75), var(--color-primary-975));
+    --color-bg-2-active: light-dark(var(--color-neutral-100), var(--color-primary-900));
 
     --color-bg-0-border: light-dark(var(--color-primary-300), var(--color-primary-700));
-    --color-bg-1-border: light-dark(var(--color-neutral-200), var(--color-neutral-700));
-    --color-bg-2-border: light-dark(var(--color-neutral-200), var(--color-neutral-800));
+    --color-bg-1-border: light-dark(var(--color-primary-200), var(--color-primary-900));
+    --color-bg-2-border: light-dark(var(--color-neutral-300), var(--color-primary-800));
 
-    --color-fg-0: light-dark(var(--color-neutral-900), var(--color-neutral-100));
+    --color-fg-0: light-dark(var(--color-neutral-950), var(--color-neutral-50));
     --color-fg-1: light-dark(var(--color-neutral-700), var(--color-neutral-300));
     --color-fg-2: light-dark(var(--color-neutral-500), var(--color-neutral-500));
 
-    --color-aside-bg: rgb(from light-dark(var(--color-primary-100), var(--color-primary-925)) r g b / 90%);
+    --color-aside-bg: rgb(from var(--color-bg-1) r g b / 75%);
 
     /* [base], hover, active, disabled, contrast */
     --color-primary: light-dark(var(--color-primary-500), var(--color-primary-500));
     --color-primary-hover: light-dark(var(--color-primary-600), var(--color-primary-600));
     --color-primary-active: light-dark(var(--color-primary-700), var(--color-primary-700));
     --color-primary-disabled: light-dark(var(--color-primary-300), var(--color-primary-700));
-    --color-primary-contrast: light-dark(var(--color-neutral-100), var(--color-neutral-100));
+    --color-primary-contrast: light-dark(var(--color-primary-50), var(--color-primary-50));
 
     --color-secondary: light-dark(var(--color-secondary-500), var(--color-secondary-500));
     --color-secondary-hover: light-dark(var(--color-secondary-600), var(--color-secondary-600));
     --color-secondary-active: light-dark(var(--color-secondary-700), var(--color-secondary-700));
     --color-secondary-disabled: light-dark(var(--color-secondary-300), var(--color-secondary-700));
-    --color-secondary-contrast: light-dark(var(--color-neutral-100), var(--color-neutral-100));
+    --color-secondary-contrast: light-dark(var(--color-secondary-50), var(--color-secondary-50));
 }
 
 /* Application */
 body {
     font-family: var(--font-main);
     background-color: var(--color-bg-0);
+    color: var(--color-fg-0);
 }

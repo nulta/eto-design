@@ -11,6 +11,7 @@ select {
     background: none;
     padding-inline: 0.5em;
     padding-block: 0;
+    transition: outline-color 0.2s;
 
     &.-primary {
         color: var(--color-primary);
@@ -31,9 +32,8 @@ button {
     border: none;
     background: none;
     cursor: pointer;
-    outline-color: transparent;
     outline-offset: 2px;
-    transition: background-color 0.2s, outline 0.1s, color 0.3s;
+    transition: background-color 0.2s, color 0.3s, outline-color 0.2s;
 
     padding-inline: 1em;
     padding-block: 0.25em;
@@ -45,10 +45,6 @@ button {
 
     &:disabled {
         cursor: not-allowed;
-    }
-
-    &:focus-visible {
-        outline: 2px solid var(--color-primary);
     }
 
     &:not(:disabled):hover {
@@ -155,21 +151,18 @@ input[type="password"],
 input[type="email"],
 textarea {
     background-color: var(--color-bg-2);
-    border: 1px solid var(--color-bg-2-border);
+    border: none;
     color: var(--color-fg-0);
     font-size: var(--text-body1);
-    transition: border-color 0.2s, background-color 0.1s;
-    
+    transition: border-color 0.2s, background-color 0.1s, outline-color 0.2s;
+
     width: 100%;
     border-radius: 4px;
     padding: 0.5em;
-    resize: vertical;
     min-height: 2.5em;
 
-    &:focus {
+    &:not(textarea):focus {
         background-color: var(--color-bg-2-active);
-        border-color: var(--color-bg-1-border);
-        outline: none;
     }
 
     &::placeholder {
@@ -186,5 +179,17 @@ textarea {
     &.-mono {
         font-family: var(--font-mono);
         min-height: 2.5em;
+    }
+}
+
+textarea {
+    resize: vertical;
+}
+
+button, select, input[type="text"], input[type="password"], input[type="email"], textarea {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    &:focus-visible {
+        outline-color: rgb(from var(--color-primary) r g b / 75%);
     }
 }
